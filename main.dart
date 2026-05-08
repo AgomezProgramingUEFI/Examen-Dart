@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:convert';
 import 'add_product.dart';
+import 'delete.dart';
+
 import 'update_product.dart'; 
 
 void main() {
@@ -34,7 +36,7 @@ void main() {
         break;
 
       case '4':
-        print('\nFuncionalidad de eliminar producto aún no implementada.');
+        deleteProduct(products);
         break;
 
       case '5':
