@@ -2,10 +2,10 @@
 import 'dart:io';
 import 'dart:convert';
 
-void addProducto(List<Map<String, dynamic>> products) {
+void addProduct(List<Map<String, dynamic>> products) {
   print("\n--- Agregar producto ---");
   print(" Ingrese nombre del producto:");
-  
+
   String nameProduct = readNonEmptyString("Nombre del producto: ");
   print("nombre del producto: $nameProduct");
 
