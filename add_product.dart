@@ -1,10 +1,3 @@
-Voy a revisar el contenido actual de add_product.dart antes de generar el código completo.
-
-Read [](file:///c%3A/Users/gomez/OneDrive/Documents/Examen%20Dart/add_product.dart)
-
-Aquí tienes el archivo completo y funcional para add_product.dart:
-
-```dart
 import 'dart:io';
 import 'dart:convert';
 
@@ -86,6 +79,3 @@ int readValidQuantity(String message) {
     return quantity;
   }
 }
-```
-
-Puedes copiarlo y pegarlo donde necesites.
