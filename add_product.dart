@@ -1,37 +1,32 @@
+Voy a revisar el contenido actual de add_product.dart antes de generar el código completo.
 
+Read [](file:///c%3A/Users/gomez/OneDrive/Documents/Examen%20Dart/add_product.dart)
+
+Aquí tienes el archivo completo y funcional para add_product.dart:
+
+```dart
 import 'dart:io';
 import 'dart:convert';
 
 void addProduct(List<Map<String, dynamic>> products) {
-  print("\n--- Agregar producto ---");
-  print(" Ingrese nombre del producto:");
+  print('\n--- Agregar producto ---');
 
-  String nameProduct = readNonEmptyString("Nombre del producto: ");
-  print("nombre del producto: $nameProduct");
-
-  print("Ingrese precio del producto: ");
-  double priceProduct = readValidPrice("Precio del producto: ");
-
-  print("precio del producto: $priceProduct");
-  print("Ingrese cantidad del producto: ");
-
-  int quantityProduct = readValidQuantity("Cantidad del producto: ");
-  print("cantidad del producto: $quantityProduct");
+  String title = readNonEmptyString('Nombre del producto: ');
+  double price = readValidPrice('Precio del producto: ');
+  int quantity = readValidQuantity('Cantidad disponible: ');
 
   products.add({
-    'nombre': nameProduct,
-    'precio': priceProduct,
-    'cantidad': quantityProduct,
+    'nombre': title,
+    'precio': price,
+    'cantidad': quantity,
   });
 
-  print("\nProducto agregado correctamente.");
-  
+  print('\nProducto agregado correctamente.');
 }
 
 String readNonEmptyString(String message) {
   while (true) {
     stdout.write(message);
-
     String? input = stdin.readLineSync(encoding: utf8);
 
     if (input != null && input.trim().isNotEmpty) {
@@ -45,7 +40,6 @@ String readNonEmptyString(String message) {
 double readValidPrice(String message) {
   while (true) {
     stdout.write(message);
-
     String? input = stdin.readLineSync(encoding: utf8);
 
     if (input == null || input.trim().isEmpty) {
@@ -53,10 +47,9 @@ double readValidPrice(String message) {
       continue;
     }
 
-    double? price = double.tryParse(input);
-
+    double? price = double.tryParse(input.replaceAll(',', '.'));
     if (price == null) {
-      print('Debes ingresar un número válido para el precio.');
+      print('Debes ingresar un número válido.');
       continue;
     }
 
@@ -72,7 +65,6 @@ double readValidPrice(String message) {
 int readValidQuantity(String message) {
   while (true) {
     stdout.write(message);
-
     String? input = stdin.readLineSync(encoding: utf8);
 
     if (input == null || input.trim().isEmpty) {
@@ -81,9 +73,8 @@ int readValidQuantity(String message) {
     }
 
     int? quantity = int.tryParse(input);
-
     if (quantity == null) {
-      print('Debes ingresar un número válido para la cantidad.');
+      print('Debes ingresar un número.');
       continue;
     }
 
@@ -95,3 +86,6 @@ int readValidQuantity(String message) {
     return quantity;
   }
 }
+```
+
+Puedes copiarlo y pegarlo donde necesites.
