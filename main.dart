@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:convert';
 import 'add_product.dart';
+import 'update_product.dart'; 
 
 void main() {
   stdout.encoding = utf8;
@@ -12,7 +13,7 @@ void main() {
     print('\n=== Gestión de productos ===');
     print('1. Agregar producto');
     print('2. Listar productos (pendiente)');
-    print('3. Actualizar producto (pendiente)');
+    print('3. Actualizar producto'); // <--- Ya no dice "pendiente"
     print('4. Eliminar producto (pendiente)');
     print('5. Salir');
 
@@ -29,7 +30,7 @@ void main() {
         break;
 
       case '3':
-        print('\nFuncionalidad de actualizar producto aún no implementada.');
+        updateProduct(products);
         break;
 
       case '4':
