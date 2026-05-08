@@ -6,16 +6,17 @@
 //● Cantidad disponible
 
 void listProducts(List<Map<String, dynamic>> products) {
+  print("\n--- Lista de productos ---");
+
   if (products.isEmpty) {
-    print('\nNo hay productos para mostrar.');
+    print("No hay productos disponibles.");
     return;
   }
 
-  print('\n=== Lista de Productos ===');
   for (int i = 0; i < products.length; i++) {
     final product = products[i];
     print(
-      '${i + 1}. ${product['name']} - Precio: \$${product['price']} - Cantidad: ${product['quantity']}',
+      "$i. Nombre: ${product['nombre']}, Precio: ${product['precio']}, Cantidad: ${product['cantidad']}",
     );
   }
 }
