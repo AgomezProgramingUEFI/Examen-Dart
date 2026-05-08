@@ -1,32 +1,48 @@
 import 'dart:io';
+import 'dart:convert';
 import 'add_product.dart';
 
 void main() {
-  List<Map<String, dynamic>> products = [];
+  stdout.encoding = utf8;
 
-  while (true) {
-    print("\n--- Menú ---");
-    print("1. Agregar producto");
-    print("2. Ver productos");
-    print("3. Salir");
-    stdout.write("Seleccione una opción: ");
+  final products = <Map<String, dynamic>>[];
+  bool running = true;
 
-    String? choice = stdin.readLineSync();
+  while (running) {
+    print('\n=== Gestión de productos ===');
+    print('1. Agregar producto');
+    print('2. Listar productos (pendiente)');
+    print('3. Actualizar producto (pendiente)');
+    print('4. Eliminar producto (pendiente)');
+    print('5. Salir');
+
+    stdout.write('Seleccione una opción: ');
+    String? choice = stdin.readLineSync(encoding: utf8);
+
     switch (choice) {
       case '1':
-        addProducto(products);
+        addProduct(products);
         break;
+
       case '2':
-        print("\n--- Productos ---");
-        for (var product in products) {
-          print("Nombre: ${product['nombre']}, Precio: ${product['precio']}, Cantidad: ${product['cantidad']}");
-        }
+        print('\nFuncionalidad de listar productos aún no implementada.');
         break;
+
       case '3':
-        print("Saliendo...");
-        return;
+        print('\nFuncionalidad de actualizar producto aún no implementada.');
+        break;
+
+      case '4':
+        print('\nFuncionalidad de eliminar producto aún no implementada.');
+        break;
+
+      case '5':
+        running = false;
+        print('\nSaliendo...');
+        break;
+
       default:
-        print("Opción inválida.");
+        print('\nOpción inválida.');
     }
   }
 }
