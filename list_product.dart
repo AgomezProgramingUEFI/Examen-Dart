@@ -16,7 +16,7 @@ void listProducts(List<Map<String, dynamic>> products) {
   for (int i = 0; i < products.length; i++) {
     final product = products[i];
     print(
-      "$i. Nombre: ${product['nombre']}, Precio: ${product['precio']}, Cantidad: ${product['cantidad']}",
+      "${i + 1}. Nombre: ${product['nombre']}, Precio: ${product['precio']}, Cantidad: ${product['cantidad']}",
     );
   }
 }
